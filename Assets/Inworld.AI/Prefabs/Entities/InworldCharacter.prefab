@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5780226317054875630}
   - component: {fileID: 1128614544702611233}
   - component: {fileID: 3818396142677475718}
+  - component: {fileID: -8396293015908315094}
   m_Layer: 0
   m_Name: InworldCharacter
   m_TagString: Untagged
@@ -75,7 +76,7 @@ MonoBehaviour:
       m_Calls: []
 --- !u!95 &6301156355025034122
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,7 +93,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!82 &500944303919660124
 AudioSource:
   m_ObjectHideFlags: 0
@@ -245,11 +247,25 @@ MonoBehaviour:
   m_LipExpression: 0.7
   m_VisemeSil: viseme_sil
   m_CustomModel: 0
+--- !u!114 &-8396293015908315094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9047055559676837508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338c5bca4f26a104db34106bcb2ad364, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Voice: 0
 --- !u!1001 &782732467131378075
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 5640325391487457652}
     m_Modifications:
     - target: {fileID: 292479413772482962, guid: f43f39a912014bb4ba362e0cc90fa5ac, type: 3}
@@ -345,6 +361,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4642585711620351756}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f43f39a912014bb4ba362e0cc90fa5ac, type: 3}
 --- !u!224 &1577043624635654557 stripped
 RectTransform:

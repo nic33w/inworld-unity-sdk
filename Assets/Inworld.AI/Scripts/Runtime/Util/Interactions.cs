@@ -7,6 +7,7 @@
 using Inworld.Collections;
 using Inworld.Packets;
 using System.Collections.Generic;
+using System.Collections.Concurrent; // NT
 using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -34,6 +35,7 @@ namespace Inworld.Util
         List<HistoryItem> History => m_ChatHistory.Where(x => !x.IsAgent || m_PlayedUtterances.ContainsKey(x.UtteranceId)).Take(m_HistorySize).ToList();
 
         internal bool isSpeaking;
+        public ConcurrentQueue<AudioClip> m_AudioClipsQueue = new ConcurrentQueue<AudioClip>(); // NT
         #endregion
 
 
@@ -53,6 +55,10 @@ namespace Inworld.Util
             InworldController.Instance.OnPacketReceived -= OnPacketEvents;
         }
         #endregion
+
+        public virtual void EnqueueAudioClipsQueue(AudioClip audioClip) { // NT
+            m_AudioClipsQueue.Enqueue(audioClip);
+        }
 
         #region Private Functions
         protected virtual void Init()
@@ -234,7 +240,7 @@ namespace Inworld.Util
         {
             if (actionEvent?.PacketId?.InteractionId == null || actionEvent.PacketId?.UtteranceId == null)
                 return;
-            AddText(actionEvent);
+            //AddText(actionEvent); // NT , comment out to prevent narrated action text messages
         }
         void _HandleTextEvent(TextEvent textEvent)
         {

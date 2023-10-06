@@ -195,6 +195,12 @@ namespace Inworld
             });
             OnCharacterSpeaks?.AddListener((character, text) =>
             {
+                // NT --------------------- from here
+                if(character != "Player") { // NT
+                    var audioClip = InworldController.Player.GetComponent<Azure.AzureSpeech>().TextToSpeech(text, GetComponent<Azure.AzureVoice>().getVoice()); // NT
+                    m_Interaction.EnqueueAudioClipsQueue(audioClip); // NT
+                }
+                // NT -------------------- to here
                 if (m_logUtterances && !string.IsNullOrEmpty(text))
                     InworldAI.Log($"{character}: {text}");
             });

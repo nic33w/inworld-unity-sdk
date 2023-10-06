@@ -22,6 +22,7 @@ namespace Inworld.Audio
         float m_CurrentFixedUpdateTime;
         AudioChunk m_CurrentAudioChunk;
         readonly ConcurrentQueue<AudioChunk> m_AudioChunksQueue = new ConcurrentQueue<AudioChunk>();
+        AudioClip m_CurrentAudioClip; // NT
         const float k_FixedUpdatePeriod = 0.1f;
         PacketId m_CurrentlyPlayingUtterance;
         string m_LastInteraction;
@@ -193,7 +194,9 @@ namespace Inworld.Audio
                 return;
             if (InworldController.Instance.CurrentCharacter != Character)
                 return;
-            AudioClip audioClip = WavUtility.ToAudioClip(m_CurrentAudioChunk.Chunk.ToByteArray());
+            //AudioClip audioClip = WavUtility.ToAudioClip(m_CurrentAudioChunk.Chunk.ToByteArray()); // NT
+            m_AudioClipsQueue.TryDequeue(out m_CurrentAudioClip); // NT
+            AudioClip audioClip = m_CurrentAudioClip; // NT
             if (audioClip)
             {
                 _CurrentAudioLength = audioClip.length;

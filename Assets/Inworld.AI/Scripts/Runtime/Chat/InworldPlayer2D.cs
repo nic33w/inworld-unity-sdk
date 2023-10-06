@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using System.Threading.Tasks; // NT
 namespace Inworld.Sample
 {
     public class InworldPlayer2D : MonoBehaviour
@@ -81,10 +82,18 @@ namespace Inworld.Sample
         #endregion
 
         #region Private Functions
-        protected void UpdateSendText()
+        protected async void UpdateSendText() // NT added async
         {
             if (!m_GlobalChatCanvas.activeSelf)
                 return;
+            // NT ------------------------- from here
+            if(!GetComponent<Azure.AzureSpeech>().waitingForReco) {
+                string micSpeechToText = await GetComponent<Azure.AzureSpeech>().MicSpeechToText(); // NT
+                if(micSpeechToText != "" && m_GlobalChatCanvas.activeSelf) {
+                    m_InputField.text = m_InputField.text + " " + micSpeechToText;
+                }
+            }
+            // NT ------------------------- to here
             if (!Input.GetKeyUp(KeyCode.Return) && !Input.GetKeyUp(KeyCode.KeypadEnter))
                 return;
             SendText();

@@ -61,7 +61,9 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -782,6 +784,7 @@ GameObject:
   - component: {fileID: 467126463096742542}
   - component: {fileID: 467126463096742539}
   - component: {fileID: 5850455540921699961}
+  - component: {fileID: 4942730041796897542}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: MainCamera
@@ -819,9 +822,17 @@ Camera:
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -908,17 +919,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b46a8612debd4af69b9f7d688f59ac9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CameraController: {fileID: 467126463096742539}
   m_GlobalChatCanvas: {fileID: 425627533}
-  m_TriggerCanvas: {fileID: 0}
-  m_RecordButton: {fileID: 1426249606}
   m_ContentRT: {fileID: 1692005494}
   m_BubbleLeft: {fileID: 3364394929633695711, guid: f324550a32836b94693f21f7a416411a, type: 3}
   m_BubbleRight: {fileID: 818457071051776631, guid: 5024602b533211241bb0ab4fd7e088e3, type: 3}
   m_InputField: {fileID: 3065141206858546042}
+  m_CameraController: {fileID: 467126463096742539}
+  m_TriggerCanvas: {fileID: 0}
+  m_RecordButton: {fileID: 1426249606}
   m_RTCanvas: {fileID: 0}
   m_InitPosition: {x: 0, y: 0, z: 0}
   m_InitRotation: {x: 0, y: 0, z: 0}
+--- !u!114 &4942730041796897542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467126463096742543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0fbc58e42b5094cb3475b5fdd96816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitingForReco: 0
+  m_SpeechRecognitionLanguage: 0
 --- !u!1 &5395192720649887967
 GameObject:
   m_ObjectHideFlags: 0
