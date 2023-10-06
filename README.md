@@ -1,7 +1,9 @@
 # Inworld AI Unity with multilingual support using Azure Speech SDK
 
-You will need to download and import the custom Azure SDK for Unity package
+You will need to download and import the custom Azure SDK for Unity package.
+
 github website for more info: https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/quickstart/csharp/unity/text-to-speech/README.md
+
 Azure SDK Unity package link: https://aka.ms/csspeech/unitypackage
 
 Once the package has been added, you need to add your Azure subscription key and region in AzureSpeech.cs code.
