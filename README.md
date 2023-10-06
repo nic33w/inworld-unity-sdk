@@ -6,9 +6,9 @@ github website for more info: https://github.com/Azure-Samples/cognitive-service
 
 Azure SDK Unity package link: https://aka.ms/csspeech/unitypackage
 
-Once the package has been added, you need to add your Azure subscription key and region in AzureSpeech.cs code.
-In AzureSpeech.cs, add more speech recognition languages, if they aren't already included
-In AzureVoice,cs, add more voices, if they aren't already included
+Once the package has been added, you need to add your Azure subscription key and region in AzureSpeech.cs, which is in Assets/Inworld.AI/Scripts/Runtime/Entities/ . 
+In AzureSpeech.cs, add more speech recognition languages, if they aren't already included.
+In AzureVoice,cs, add more voices, if they aren't already included.
 The current ones include Spanish, Indonesian, Mandarin, & French. So if you want another language you will have to find the code from the Azure website.
 
 Then in the Unity Editor you can select the voice of the Inworld Character in the InworldCharacter in InworldController, as well as the speech recognition language in PlayerController.
