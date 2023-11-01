@@ -62,6 +62,7 @@ public class AzureSpeech : MonoBehaviour
         // We are playing the audio in memory as audio clip, which doesn't require riff header.
         // So we need to set the format to raw (24KHz for better quality).
         speechConfig.SetSpeechSynthesisOutputFormat(SpeechSynthesisOutputFormat.Raw24Khz16BitMonoPcm);
+        synthesizer = new SpeechSynthesizer(speechConfig, null)
         synthesizer.SynthesisCanceled += (s, e) =>
         {
             var cancellation = SpeechSynthesisCancellationDetails.FromResult(e.Result);
